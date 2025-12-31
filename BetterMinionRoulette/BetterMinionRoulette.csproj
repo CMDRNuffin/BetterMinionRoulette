@@ -1,0 +1,53 @@
+﻿<Project Sdk="Dalamud.NET.Sdk/14.0.1">
+  <PropertyGroup>
+    <PackageProjectUrl>https://github.com/CMDRNuffin/BetterMountRoulette</PackageProjectUrl>
+    <OutputPath>../dist</OutputPath>
+    <GenerateDependencyFile>false</GenerateDependencyFile>
+    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+    <AnalysisLevel>latest-all</AnalysisLevel>
+    <Name>Better Minion Roulette</Name>
+    <InternalName>BetterMinionRoulette</InternalName>
+    <Author>Nuffin</Author>
+    <Description>
+      Allows any number of minions to be enabled for the minion roulette, instead of having to choose between the
+      "up to 30" and "EVERYTHING" modes supported by the game.
+    </Description>
+    <Punchline>Choose which minions show up in the minion roulette</Punchline>
+    <Tags>minion</Tags>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)'=='Release'">
+    <DebugType>none</DebugType>
+    <DebugSymbols>false</DebugSymbols>
+    <TreatWarningsAsErrors>True</TreatWarningsAsErrors>
+    <NoWarn>EnableGenerateDocumentationFile</NoWarn>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)'=='Debug'">
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <TreatWarningsAsErrors>True</TreatWarningsAsErrors>
+    <!--
+      Make sure any documentation comments which are included in code get checked for syntax during the build, but do
+      not report warnings for missing comments.
+      CS1573: Parameter 'parameter' has no matching param tag in the XML comment for 'parameter' (but other parameters do)
+      CS1591: Missing XML comment for publicly visible type or member 'Type_or_Member'
+      CS1712: Type parameter 'type_parameter' has no matching typeparam tag in the XML comment on 'type_or_member' (but other type parameters do)
+    -->
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <NoWarn>$(NoWarn),1573,1591,1712</NoWarn>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <WarningLevel>9999</WarningLevel>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <WarningLevel>9999</WarningLevel>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BetterMinionMountRouletteShared\BetterMinionMountRouletteShared.csproj" />
+  </ItemGroup>
+
+</Project>
