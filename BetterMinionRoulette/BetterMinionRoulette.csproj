@@ -8,10 +8,7 @@
     <Name>Better Minion Roulette</Name>
     <InternalName>BetterMinionRoulette</InternalName>
     <Author>Nuffin</Author>
-    <Description>
-      Allows any number of minions to be enabled for the minion roulette, instead of having to choose between the
-      "up to 30" and "EVERYTHING" modes supported by the game.
-    </Description>
+    <Description>Allows any number of minions to be enabled for the minion roulette, instead of having to choose between the "up to 30" and "EVERYTHING" modes supported by the game.</Description>
     <Punchline>Choose which minions show up in the minion roulette</Punchline>
     <Tags>minion</Tags>
   </PropertyGroup>
