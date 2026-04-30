@@ -85,7 +85,7 @@ internal sealed class ConfigWindow : ConfigWindowBase<CharacterConfig, MinionGro
 
                 _ = ImGui.TableNextColumn();
 
-                SelectRouletteGroup(characterConfig, ref groupName, rouletteGroupId);
+                SelectRouletteGroup(characterConfig, "Replace with minion group"u8, ref groupName, rouletteGroupId);
 
                 ImGui.EndTable();
             }
