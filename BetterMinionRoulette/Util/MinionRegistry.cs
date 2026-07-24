@@ -13,11 +13,16 @@ using Lumina.Excel.Sheets;
 using System.Collections.Generic;
 using System.Linq;
 
-internal sealed class MinionRegistry(IDataManager dataManager, ITextureProvider textureProvider, IClientState clientState)
-    : ItemRegistry<MinionData, MinionGroup>(clientState)
+internal sealed class MinionRegistry : ItemRegistry<MinionData, MinionGroup>
 {
-    private readonly IDataManager _dataManager = dataManager;
-    private readonly ITextureProvider _textureProvider = textureProvider;
+    private readonly IDataManager _dataManager;
+    private readonly ITextureProvider _textureProvider;
+
+    public MinionRegistry(IDataManager dataManager, ITextureProvider textureProvider, IClientState clientState) : base(clientState)
+    {
+        _dataManager = dataManager;
+        _textureProvider = textureProvider;
+    }
 
     protected override IEnumerable<MinionData> GetAllItems()
     {

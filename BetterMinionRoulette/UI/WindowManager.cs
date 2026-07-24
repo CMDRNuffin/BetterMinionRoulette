@@ -6,9 +6,15 @@ using Dalamud.Interface.Windowing;
 
 using System.Linq;
 
-internal sealed class WindowManager(BetterMinionRoulettePlugin plugin) : WindowManagerBase(plugin.DalamudPluginInterface)
+internal sealed class WindowManager : WindowManagerBase
 {
-    private readonly BetterMinionRoulettePlugin _plugin = plugin;
+    private readonly BetterMinionRoulettePlugin _plugin;
+
+    public WindowManager(BetterMinionRoulettePlugin plugin)
+        : base(plugin.DalamudPluginInterface)
+    {
+        _plugin = plugin;
+    }
 
     protected override Window GetOrCreateConfigWindow(out bool isNew)
     {
