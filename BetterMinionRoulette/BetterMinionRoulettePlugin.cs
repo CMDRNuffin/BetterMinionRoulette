@@ -59,7 +59,7 @@ public sealed class BetterMinionRoulettePlugin : IDalamudPlugin, IDisposable
 
         WindowManager = new(this);
         CharacterManager = new(pluginLog, dalamudPluginInterface, playerState, Configuration);
-        ActionHandler = new(gameInteropProvider, pluginLog, objectTable, MinionRegistry, () => CharacterConfig);
+        ActionHandler = new(gameInteropProvider, objectTable, MinionRegistry, () => CharacterConfig);
 
         _ownsCommand = commandManager.AddHandler(COMMAND_TEXT, new CommandInfo(HandleCommand) { HelpMessage = COMMAND_HELP_MESSAGE });
 

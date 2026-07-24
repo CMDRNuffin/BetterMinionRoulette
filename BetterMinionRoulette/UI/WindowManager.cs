@@ -25,4 +25,9 @@ internal sealed class WindowManager(BetterMinionRoulettePlugin plugin) : WindowM
 
         return configWindow;
     }
+
+    protected override Window? TryGetConfigWindow()
+    {
+        return InternalWindows.Windows.OfType<ConfigWindow>().FirstOrDefault();
+    }
 }

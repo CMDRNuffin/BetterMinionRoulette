@@ -20,10 +20,9 @@ internal sealed class ActionHandler : ActionHandlerBase
 
     public ActionHandler(
         IGameInteropProvider gameInteropProvider,
-        IPluginLog pluginLog,
         IObjectTable objectTable,
         MinionRegistry registry,
-        Func<CharacterConfig?> getCharConfig) : base(gameInteropProvider, pluginLog)
+        Func<CharacterConfig?> getCharConfig) : base(gameInteropProvider)
     {
         _objectTable = objectTable;
         _registry = registry;
